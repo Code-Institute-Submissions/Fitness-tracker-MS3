@@ -8,12 +8,11 @@
 </head>
 
 <body>
-    {% for workouts in workout %}
-    <br>{{ workout.workout_name }}
-    <br>{{ workout.distance }}
-    <br>{{ workout.duration }}
-    <br>{{ workout.title }}
-    <br>{{ workout.description }} {% endfor %}
+    {% for workout in workouts %}
+    <br>{{ workout.workout_type }}
+    <br>{{ workout.workout_duration }}
+    <br>{{ workout.workout_distance }}
+    <br>{{ workout.workout_description }} {% endfor %}
 </body>
 
 </html>
