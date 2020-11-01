@@ -17,8 +17,8 @@ mongo = PyMongo(app)
 
 @app.route("/dashboard")
 def dashboard():
-    workouts = mongo.db.workout.find()
-    return render_template("dashboard.html", workout=workouts)
+    workout = mongo.db.workout.find()
+    return render_template("dashboard.html", workout=workout)
 
 
 if __name__ == '__main__':
