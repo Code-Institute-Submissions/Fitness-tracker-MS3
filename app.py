@@ -20,8 +20,8 @@ app.config["MONGO_URI"] = MONGO_URI
 
 @app.route("/dashboard")
 def dashboard():
-   return render_template("dashboard.html", tasks=mongo.db.dashboard.find())
-
+    workouts = mongo.db.workout.find()
+    return render_template("dashboard.html", workout=workouts)
 
 
 if __name__ == '__main__':
