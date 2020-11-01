@@ -14,11 +14,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+@app.route("/")
 @app.route("/dashboard")
 def dashboard():
-    workouts = mongo.db.workouts.find()
-    return render_template("dashboard.html", workouts=workouts)
+    return render_template("dashboard.html", workouts=mongo.db.workouts.find())
 
 
 if __name__ == '__main__':
