@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
 
+
 MONGO_URI = os.environ.get('MONGO_URI')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DB_NAME = os.environ.get('DB_NAME')
