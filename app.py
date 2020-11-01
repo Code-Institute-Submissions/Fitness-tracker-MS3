@@ -6,16 +6,13 @@ if os.path.exists("env.py"):
     import env
 
 
-MONGO_URI = os.environ.get('MONGO_URI')
-SECRET_KEY = os.environ.get('SECRET_KEY')
-DB_NAME = os.environ.get('DB_NAME')
-
-
 app = Flask(__name__)
-app.config
-app.secret_key = SECRET_KEY
-app.config["MONGO-DBNAME"] = DB_NAME
-app.config["MONGO_URI"] = MONGO_URI
+
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
+mongo = PyMongo(app)
 
 
 @app.route("/dashboard")
