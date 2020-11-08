@@ -1,5 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import (
+    Flask, flash, render_template, 
+    redirect, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -17,7 +19,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html", workouts=mongo.db.workouts.find())
+    workouts = mongo.db.workouts.find()
+    return render_template("dashboard.html", workouts=workouts)
 
 
 if __name__ == '__main__':
