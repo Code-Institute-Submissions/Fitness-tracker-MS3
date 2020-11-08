@@ -1,16 +1,6 @@
-<html>
-
-<head>
-    <title>Workouts</title>
-
-    <body>
-        {% for workout in workouts %}
-        <br> {{ workout.workout_type }}
-        <br> {{ workout.workout_duration }}
-        <br>{{ workout.workout_distance }}
-        <br>{{ workout.workout_description }}
-        <br>{% endfor %}
-    </body>
-</head>
-
-</html>
+{% extends "base.html" %} {% block content %} {% for workout in workouts %}
+<br> {{ workout.workout_type }}
+<br> {{ workout.workout_duration }}
+<br>{{ workout.workout_distance }}
+<br>{{ workout.workout_description }}
+<br>{% endfor %} {% endblock %}
