@@ -4,13 +4,13 @@
 
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="git">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
             <!--username -->
             <div class="row ">
                 <div class="input-field col s12">
                     <i class="material-icons prefix blue-text lighten-1">account_circle</i>
-                    <input id="username" name="username" type="text" class="validate ">
+                    <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5-20}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <div class="row ">
                 <div class="input-field col s12">
                     <i class="material-icons prefix blue-text lighten-1">lock</i>
-                    <input id="password" name="password" type="password" class="validate">
+                    <input id="password" name="password" type="password" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5-20}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
