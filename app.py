@@ -17,13 +17,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
-@app.route("/dashboard")
-def dashboard():
-    workouts = mongo.db.workouts.find()
-    return render_template("dashboard.html", workouts=workouts)
-
-
+#registering users
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -44,6 +40,7 @@ def register():
         # check newuser cookie session
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -57,9 +54,12 @@ def login():
         if existing_user:
             # check password matches user
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
+                            request.form.get("username")))
+                        return redirect(url_for(
+                            "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -72,6 +72,12 @@ def login():
 
     return render_template("login.html")
 
+
+@app.route("/dashboard/<username>", methods=["GET", "POST"])
+def dashboard(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    return render_template("dashboard.html", username=username)
 
 
 if __name__ == '__main__':

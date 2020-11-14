@@ -3,4 +3,14 @@
 <br> {{ workout.workout_duration }}
 <br>{{ workout.workout_distance }}
 <br>{{ workout.workout_description }}
-<br>{% endfor %} {% endblock %}
+<br>{% endfor %}
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel">
+            <h3 class="center-align blue-text lighten-1">
+                {{ username }}'s Profile
+            </h3>
+        </div>
+    </div>
+</div>
+<br>{% endblock %}
