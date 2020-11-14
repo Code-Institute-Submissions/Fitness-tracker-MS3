@@ -17,7 +17,7 @@
     <header>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">login</a></li>
+            <li><a href="{{ url_for( 'login') }}">login</a></li>
             <li><a href="#!">logout</a></li>
             <li><a href="{{ url_for( 'register') }}">Register</a></li>
         </ul>
@@ -51,7 +51,7 @@
                 <li><a href="# ">Challenge a friend</a></li>
                 <li><a href="# ">Request a partner</a></li>
                 <li><a href="# ">log out</a></li>
-                <li><a href="# ">log in</a></li>
+                <li><a href="{{ url_for( 'login') }}">login</a></li>
                 <li><a href="{{ url_for( 'register') }}">Register</a></li>
             </ul>
     </header>
