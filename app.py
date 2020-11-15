@@ -40,7 +40,7 @@ def register():
         # check newuser cookie session
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        git s)
     return render_template("register.html")
 
 
@@ -52,7 +52,7 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # check password matches user
+            # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
