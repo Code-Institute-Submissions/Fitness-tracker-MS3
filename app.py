@@ -40,7 +40,6 @@ def register():
         # check newuser cookie session
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        git s)
     return render_template("register.html")
 
 
