@@ -1,4 +1,4 @@
-{% extends "profile.html" %} {% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card-panel">
@@ -8,13 +8,15 @@
         </div>
     </div>
 </div>
-<!--without an image uploaded into a workout-->
+
+
 <div class="row">
     <div class="col s12 m6  offset-m4">
         <div class="card">
             {% for workout in workouts %}
             <div class="card-content">
                 <h4 class="center-align blue-text lighten-1">{{ workout.workout_type }}</h4>
+                <input class="filepond">
                 <h6 class="blue-text lighten-1 ">{{ workout.workout_duration }}</h6>
                 <h6 class="blue-text lighten-1 ">{{ workout.workout_distance }}</h6>
                 <h6 class="blue-text lighten-1 ">description</h6>
