@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "profile.html" %} {% block content %}
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card-panel">
@@ -8,53 +8,26 @@
         </div>
     </div>
 </div>
-<!--with an image uploaded into a workout-->>
+<!--without an image uploaded into a workout-->
 <div class="row">
     <div class="col s12 m6  offset-m4">
         <div class="card">
-            <h4 class="center-align blue-text lighten-1">Workout Type</h4>
-            <div class="card-image">
-                <img src="assets/images/sample-1.jpg">
-                <div class="card-content">
-                    <h6 class="blue-text lighten-1 ">Duration</h6>
-                    <h6 class="blue-text lighten-1 ">Distance</h6>
-                    <h6 class="blue-text lighten-1 ">description</h6>
-                    <p>this is a description of your workout</p>
-                </div>
-                <div class="card-action">
-                    <a href="#"><i class="material-icons center-align right" style="color:rgba(0, 153, 255, 0.671)">add_circle</i></a>
-                    <a href="#"><i class="material-icons center-align right" style="color: darkgray;">create</i></a>
-                    <a href="#"><i class="material-icons center-align right" style="color: darkgray;">delete</i></a>
-                </div>
+            {% for workout in workouts %}
+            <div class="card-content">
+                <h4 class="center-align blue-text lighten-1">{{ workout.workout_type }}</h4>
+                <h6 class="blue-text lighten-1 ">{{ workout.workout_duration }}</h6>
+                <h6 class="blue-text lighten-1 ">{{ workout.workout_distance }}</h6>
+                <h6 class="blue-text lighten-1 ">description</h6>
+                <p>{{ workout.workout_description }}</p>
             </div>
+            <div class="card-action">
+                <a href="#"><i class="material-icons center-align right" style="color:rgba(0, 153, 255, 0.671)">add_circle</i></a>
+                <a href="#"><i class="material-icons center-align right" style="color: darkgray;">create</i></a>
+                <a href="#"><i class="material-icons center-align right" style="color: darkgray;">delete</i></a>
+            </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 
-    <!--without an image uploaded into a workout-->
-    <div class="row">
-        <div class="col s12 m6  offset-m4">
-            <div class="card">
-                <div class="card-content">
-                    <h4 class="center-align blue-text lighten-1">Workout Type</h4>
-                    <h6 class="blue-text lighten-1 ">Duration</h6>
-                    <h6 class="blue-text lighten-1 ">Distance</h6>
-                    <h6 class="blue-text lighten-1 ">description</h6>
-                    <p>this is a description of your workout</p>
-                </div>
-                <div class="card-action">
-                    <a href="#"><i class="material-icons center-align right" style="color:rgba(0, 153, 255, 0.671)">add_circle</i></a>
-                    <a href="#"><i class="material-icons center-align right" style="color: darkgray;">create</i></a>
-                    <a href="#"><i class="material-icons center-align right" style="color: darkgray;">delete</i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {% for workout in workouts %}
-    <br> {{ workout.workout_type }}
-    <br> {{ workout.workout_duration }}
-    <br>{{ workout.workout_distance }}
-    <br>{{ workout.workout_description }}
-    <br>{% endfor %}
-
-    <br>{% endblock %}
+<br>{% endblock %}

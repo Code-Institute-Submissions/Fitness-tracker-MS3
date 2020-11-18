@@ -19,6 +19,12 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/dashboard")
+def dashboard():
+    workouts = mongo.db.workouts.find()
+    return render_template("dashboard.html", workouts=workouts)
+
+
 #registering users
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -56,7 +62,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(request.form.get("username")))
-                        return redirect(url_for("dashboard", username=session["user"]))
+                        return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -70,14 +76,14 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/dashboard/<username>", methods=["GET", "POST"])
-def dashboard(username):
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("dashboard.html", username=username)
+        return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
 
