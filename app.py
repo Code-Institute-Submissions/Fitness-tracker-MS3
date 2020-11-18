@@ -94,6 +94,12 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+@app.route("/add_workout")
+def add_workout():
+    categories = mongo.db.categories.find().sort("workout_type", 1)
+    return render_template("add_workout.html", categories=categories)
+
 if __name__ == '__main__':
            app.run(host=os.environ.get('IP', '0.0.0.0'),              
            port=int(os.environ.get('PORT', 5000)),
