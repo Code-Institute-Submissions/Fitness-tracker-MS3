@@ -20,7 +20,7 @@
         <div class="input-field col s12">
             <select id="workout_type" name="workout_type" class="validate" required>
       <option value="" disabled selected>Choose your option</option>
-      {% for workout in categories %}
+      {% for category in categories %}
       <option value="{{ category.workout_type }}">{{ category.workout_type }}</option>
     
     </select>
