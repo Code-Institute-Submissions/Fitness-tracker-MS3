@@ -95,6 +95,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+#adding workout to mongo DB
 @app.route("/add_workout", methods=["GET", "POST"])
 def add_workout():
     if request.method == "POST":
