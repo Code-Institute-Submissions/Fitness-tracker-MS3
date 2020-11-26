@@ -4,82 +4,78 @@
 
 <!--workout title-->
 <div class="row card-panel grey lighten-5">
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="workout_type" name="workout_type" type="text" class="validate">
-                    <label for="workout_type">Workout Title</label>
-                </div>
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="workout_type" name="workout_type" type="text" class="validate">
+                <label for="workout_type">Workout Title</label>
             </div>
-    </div>
+        </div>
+</div>
 
 
-    <!--select workout type-->
-    <div class="row">
-        <div class="input-field col s12">
-            <select id="workout_type" name="workout_type" class="validate" required>
+<!--select workout type-->
+<div class="row">
+    <div class="input-field col s12">
+        <select id="workout_type" name="workout_type" class="validate" required>
       <option value="" disabled selected>Choose your option</option>
       {% for category in categories %}
       <option value="{{ category.workout_type }}">{{ category.workout_type }}</option>
       {% endfor %} 
     </select>
-            <label for="workout_type">Sport Category</label>
-        </div>
+        <label for="workout_type">Sport Category</label>
     </div>
+</div>
 
 
-    <!--select distance and metric-->
-    <div class="row">
-        <form class="col s12">
-            <div class="input-field col s6">
-                <select class="workout_distance" name="workout_distance" class="validate">
+<!--select distance and metric-->
+<div class="row">
+    <div class="input-field col s6">
+        <select class="workout_distance" name="workout_distance" class="validate">
             <option value="" disabled selected>0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="2">3</option>
            
             </select>
-                <label for="workout_distance">Distance</label>
-            </div>
-            <div class="input-field col s6">
-                <select id="workout_metric" name="workout_metric" class="validate">
+        <label for="workout_distance">Distance</label>
+    </div>
+    <div class="input-field col s6">
+        <select id="workout_metric" name="workout_metric" class="validate">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">miles</option>
                 <option value="2">km</option>
                 <option value="2">lengths</option>
                
                 </select>
-                <label for="workout_metric">Metric</label>
-            </div>
+        <label for="workout_metric">Metric</label>
     </div>
+</div>
 
 
-    <!--date picker-->
-    <div class="row">
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="workout_date" name="workout_date" type="text" class="datepicker validate" required>
-                        <label for="workout_date">Workout Date</label>
-                    </div>
-                </div>
-        </div>
+<!--date picker-->
+
+<div class="row">
+    <div class="input-field col s6">
+        <input id="workout_date" name="workout_date" type="text" class="datepicker validate" required>
+        <label for="workout_date">Workout Date</label>
     </div>
+</div>
 
 
-    <!--description area-->
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="workout_description" name="workout_description" class="materialize-textarea validate" minlength="0" maxlength="200" required></textarea>
-                    <label for="workout_description">workout description</label>
-                </div>
-            </div>
-        </form>
+<!--description area-->
+<div class="row">
+    <div class="input-field col s12">
+        <textarea id="workout_description" name="workout_description" class="materialize-textarea validate" minlength="0" maxlength="200" required></textarea>
+        <label for="workout_description">workout description</label>
     </div>
+</div>
+<!--submit button-->
+<div class="row">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+    </form>
 </div>
 </div>
 {% endblock %}
