@@ -95,8 +95,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_workout")
+@app.route("/add_workout", methods=["GET", "POST"])
 def add_workout():
+    if request.method == "POST":
+        workout = { 
+            "workout_type": request.form.get("workout_type"),
+            "workout_distance": request.form.get("workout_distance"),
+            "workout_metric": request.form.get("workout_metric"),
+            "workout_duration_h": request.form.get("workout_duration_h"),
+            "workout_duration_m": request.form.get("workout_duration_m"),
+            "workout_date": request.form.get("workout_date"),
+             "workout_description": request.form.get("workout_description"),
+             "created_by": session["user"]  
+        }
+        mongo.db.workouts.insert_one(workout)
+        flash("Workout successfully added")
+        return redirect(url_for("dashboard"))
+
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("add_workout.html", categories=categories)
 
