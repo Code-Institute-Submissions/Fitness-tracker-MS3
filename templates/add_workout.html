@@ -22,7 +22,7 @@
       <option value="" disabled selected>Choose your option</option>
       {% for category in categories %}
       <option value="{{ category.workout_type }}">{{ category.workout_type }}</option>
-    
+      {% endfor %} 
     </select>
             <label for="workout_type">Sport Category</label>
         </div>
@@ -82,4 +82,4 @@
     </div>
 </div>
 </div>
-{% endfor %} {% endblock %}
+{% endblock %}
