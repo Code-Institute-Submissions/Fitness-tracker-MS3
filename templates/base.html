@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <header>
         <!--main top nav element-->
         <nav>
@@ -23,9 +22,7 @@
                     <ul class="right hide-on-med-and-down ">
                         {% if session.user %}
                         <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="# ">Challenge a friend</a></li>
-                        <li><a href="# ">Request a partner</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="material-icons ">account_circle</i></a></li>
                         <li><a href="{{ url_for( 'add_workout') }}"><i class="material-icons ">add</i></a></li>
                         <li><a href="{{ url_for( 'logout') }}">logout</a></li>
 
@@ -47,8 +44,6 @@
                 <li> <a href="{{ url_for( 'add_workout') }}">Add Workout</a></li>
                 <li> <a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
-                <li><a href=" # ">Challenge a friend</a></li>
-                <li><a href="# ">Request a partner</a></li>
                 <li><a href="{{ url_for( 'logout') }}">log out</a></li>
 
                 {% else %}
