@@ -6,6 +6,27 @@
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
+            <!--firstname -->
+            <div class="row ">
+                <div class="input-field col s12">
+                    <input id="firstname" name="firstname" type="text" minlength="5" maxlength="20" class="validate" required>
+                    <label for="username">First name</label>
+                </div>
+            </div>
+            <!--lastname -->
+            <div class="row ">
+                <div class="input-field col s12">
+                    <input id="lastname" name="lastname" type="text" minlength="5" maxlength="20" class="validate" required>
+                    <label for="username">Last name</label>
+                </div>
+            </div>
+            <!--email -->
+            <div class="row ">
+                <div class="input-field col s12">
+                    <input type="email" name="signup_email" id="signup_email" class="form-control" required />
+                    <label for="username">Email</label>
+                </div>
+            </div>
             <!--username -->
             <div class="row ">
                 <div class="input-field col s12">
@@ -22,6 +43,8 @@
                     <label for="password">Password</label>
                 </div>
             </div>
+
+            <br>
             <!-- register btn -->
             <div class="row">
                 <button type="submit" class="col s12 btn-large blue lighten-1">
