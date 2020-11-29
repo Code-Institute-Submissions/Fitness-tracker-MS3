@@ -9,14 +9,14 @@
             <!--firstname -->
             <div class="row ">
                 <div class="input-field col s12">
-                    <input id="firstname" name="firstname" type="text" minlength="5" maxlength="20" class="validate" required>
+                    <input id="firstname" name="firstname" type="text" class="validate" required>
                     <label for="firstname">First name</label>
                 </div>
             </div>
             <!--lastname -->
             <div class="row ">
                 <div class="input-field col s12">
-                    <input id="lastname" name="lastname" type="text" minlength="5" maxlength="20" class="validate" required>
+                    <input id="lastname" name="lastname" type="text" class="validate" required>
                     <label for="lastname">Last name</label>
                 </div>
             </div>
@@ -44,14 +44,12 @@
                 </div>
             </div>
             <!-- upload profile img -->
-            <h7>upload profile image</h7>
-            <div class="file-field input-field">
-                <div class="btn blue">
-                    <span>Choose File</span>
-                    <input type="file">
+            <div class="form-group">
+                <label for="profile_image" id="image-label">Upload Profile Image</label>
+                <div>
+                    <input type="file" name="profile_image" id="profile_image" class="form-control" aria-describedby="profileimage" required/>
                 </div>
             </div>
-            <br>
             <input>
             <br>
             <!-- register btn -->
