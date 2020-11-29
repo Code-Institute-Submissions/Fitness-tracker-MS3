@@ -47,12 +47,13 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
              }
-        
         mongo.db.users.insert_one(register)
-         
+
         if  "profile_image" in request.files:
-             profile_image = request.files["profile_image"]
-             mongo.users.save_file(profile_image.filename, profile_image)
+            profile_image = request.files["profile_image"]
+            mongo.save_file(profile_image.filename, profile_image)
+        mongo.db.users.insert_one({"profile_image_name" : request.form.get('profile_image.filename')})
+
 
         # check newuser cookie session
         session["user"] = request.form.get("username").lower()
