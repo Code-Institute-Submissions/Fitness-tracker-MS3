@@ -75,7 +75,6 @@
             </div>
         </div>
 
-
         <!--description area-->
         <div class="row">
             <div class="input-field col s12">
@@ -83,9 +82,18 @@
                 <label for="workout_description">workout description</label>
             </div>
         </div>
+
+        <!-- upload profile img -->
+        <div class="form-group">
+            <label for="workout_image" id="image-label">Upload workout Image</label>
+            <div>
+                <input type="file" name="workout_image" id="workout_image" class="form-control" aria-describedby="workoutimage" required/>
+            </div>
+        </div>
+        <input>
         <!--submit button-->
         <div class="row">
-            <button class="btn blue" type="submit" name="action">Add Workout
+            <button class="right btn blue" type="submit" name="action">Add Workout
                     <i class="material-icons right">add</i>
                   </button>
     </form>
