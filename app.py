@@ -117,11 +117,15 @@ def add_workout():
             "workout_duration_m": request.form.get("workout_duration_m"),
             "workout_date": request.form.get("workout_date"),
              "workout_description": request.form.get("workout_description"),
+             "workout_image": request.form.get("workout_image"),
              "created_by": session["user"]  
         }
         mongo.db.workouts.insert_one(workout)
-        flash("Workout successfully added")
-        return redirect(url_for("dashboard"))
+
+        if  "workout_image" in request.files:
+            workout_image = request.files["workout_image"]
+            mongo.save_file(workout_image.filename, workout_image)
+            return redirect(url_for("dashboard"))
 
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("add_workout.html", categories=categories)
