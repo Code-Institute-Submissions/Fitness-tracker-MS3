@@ -20,7 +20,7 @@
         <div class="card">
             {% for workout in workouts %}
             <div class=" card-content">
-                <img src="/static/images/{{workout_image.filename}}.jpg">
+                <div class="col-12 col-md-8 workout-image m-2" style="background-image: src=" {{ url_for( 'static', filename='workout_image' ) }} "></div>
                 <h5 class="left blue-text lighten-1 ">{{ workout.workout_type }}</h5>
                 <h6 class="right grey-text ">{{ workout.workout_date }}</h6>
                 <input>
