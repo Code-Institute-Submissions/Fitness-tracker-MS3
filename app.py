@@ -125,11 +125,15 @@ def add_workout():
         if  "workout_image" in request.files:
             workout_image = request.files["workout_image"]
             mongo.save_file(workout_image.filename, workout_image)
-            return redirect(url_for("dashboard"))
+            mongo.db.users.insert({"username" : request.form.get("username"), "workout_image" : workout_image.filename})
 
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("add_workout.html", categories=categories)
 
+
+@app.route("/file/<filename>")
+def file(filename):
+    return mongo.send_file(filename)
 
 
 if __name__ == '__main__':

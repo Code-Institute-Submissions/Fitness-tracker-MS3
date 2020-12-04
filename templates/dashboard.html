@@ -1,35 +1,45 @@
 {% extends "base.html" %} {% block content %}
+
+<!-- User profile information-->
 <div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align blue-text lighten-1">
-                {{ username }}'s Profile
-            </h3>
-        </div>
+    <div class="col s12 m4">
+        <h4 class="profile-title col-12 pb-3 no-gutters text-center">
+            users name</h4>
+        <input>
+        <h7 class=" col s12 m4 left grey-text lighten-1">activities</h7>
+        <p class="left grey-text lighten-1">12</p>
+        <h7 class="right grey-text lighten-1 ">last active</h7>
+        <p class="right grey-text lighten-1 ">28th Nov 2020</p>
     </div>
 </div>
 
 
-<div class="row">
-    <div class="col s12 m6  offset-m4">
+<!-- workout cards -->
+<div class="row workout_git statuscards">
+    <div class="col s12 m6 offset-m4 ">
         <div class="card">
             {% for workout in workouts %}
-            <div class="card-content">
-                <h4 class="center-align blue-text lighten-1">{{ workout.workout_type }}</h4>
-                <input class="filepond">
-                <h6 class="blue-text lighten-1 ">{{ workout.workout_duration }}</h6>
-                <h6 class="blue-text lighten-1 ">{{ workout.workout_distance }}</h6>
-                <h6 class="blue-text lighten-1 ">description</h6>
-                <p>{{ workout.workout_description }}</p>
+            <div class=" card-content">
+                <img src="/static/images/{{workout_image.filename}}.jpg">
+                <h5 class="left blue-text lighten-1 ">{{ workout.workout_type }}</h5>
+                <h6 class="right grey-text ">{{ workout.workout_date }}</h6>
+                <input>
+                <input>
+                <h8>Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</h8>
+                <h8 class="right ">Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</h8>
+                <br>
+                <br>
+                <h9>Description:</h9>
+                <p class="grey-text ">{{ workout.workout_description }}</p>
+                <p><em>by: {{workout.created_by}}</em></p>
             </div>
-            <div class="card-action">
-                <a href="#"><i class="material-icons center-align right" style="color:rgba(0, 153, 255, 0.671)">add_circle</i></a>
-                <a href="#"><i class="material-icons center-align right" style="color: darkgray;">create</i></a>
-                <a href="#"><i class="material-icons center-align right" style="color: darkgray;">delete</i></a>
+            <div class=" card-action ">
+                <a href="# "><i class="material-icons center-align right " style="color:rgba(0, 153, 255, 0.671) ">add_circle</i></a>
+                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
+                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
             </div>
-            {% endfor %}
+            <input> {% endfor %}
         </div>
     </div>
 </div>
-
 {% endblock %}
