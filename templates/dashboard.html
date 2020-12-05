@@ -15,32 +15,35 @@
 
 
 <!-- workout cards -->
-<span class="workout-block">
-<div class="row statuscards">
-    <div class="col s12 m6 offset-m4 ">
+
+<div class="row">
+    <div class="col s12 m7 offset-m4">
         <div class="card">
-            {% for workout in workouts %}
-            <div class=" card-content">
-                <h5 class="left blue-text lighten-1 ">{{ workout.workout_type }}</h5>
-                <h6 class="right grey-text ">{{ workout.workout_date }}</h6>
-                <input>
-                <div class="col-12 col-md-8 workout-image m-2" style="background-image: image(images/default_noimage.jpg);"></div>
-                <input>
-                <h8>Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</h8>
-                <h8 class="right ">Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</h8>
+            <div class="card-image">
+                {% for workout in workouts %}
+                <img src="static/images/default_noimage.jpg ">
+                <span class="card-title" style="font-weight: 600;">{{ workout.workout_type }}</span>
+            </div>
+            <div class="card-content ">
+                <h6 class="grey-text ">{{ workout.workout_date }}</h6>
+                <h8> Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</h8>
+                <h8 class="right">Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</h8>
                 <br>
-                <br>
-                <h9>Description:</h9>
                 <p class="grey-text ">{{ workout.workout_description }}</p>
-                <p><em>by: {{workout.created_by}}</em></p>
+                <br>
+                <div class=" card-action">
+                    <p class="center-align left"><em>by: {{workout.created_by}}</em></p>
+                    <a href="# "><i class="material-icons center-align right " style="color:rgba(0, 153, 255, 0.671) ">add_circle</i></a>
+                    <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
+                    <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
+
+                    <input>
+                </div>
+                {% endfor %}
             </div>
-            <div class=" card-action ">
-                <a href="# "><i class="material-icons center-align right " style="color:rgba(0, 153, 255, 0.671) ">add_circle</i></a>
-                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
-                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
-            </div>
-            <input> {% endfor %}
         </div>
     </div>
 </div>
-</span> {% endblock %}
+</div>
+
+{% endblock %}
