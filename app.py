@@ -115,6 +115,7 @@ def add_workout():
              "created_by": session["user"]  
         }
         mongo.db.workouts.insert_one(workout)
+        return redirect(url_for("dashboard"))
 
         
     categories = mongo.db.categories.find().sort("workout_type", 1)
@@ -124,9 +125,29 @@ def add_workout():
 #editing a workout
 @app.route("/edit_workout/<workout_id>", methods=["GET", "POST"])
 def edit_workout(workout_id):
+    if request.method == "POST":
+        submit = { 
+            "workout_type": request.form.get("workout_type"),
+            "workout_distance": request.form.get("workout_distance"),
+            "workout_metric": request.form.get("workout_metric"),
+            "workout_duration_h": request.form.get("workout_duration_h"),
+            "workout_duration_m": request.form.get("workout_duration_m"),
+            "workout_date": request.form.get("workout_date"),
+             "workout_description": request.form.get("workout_description"),
+             "created_by": session["user"]  
+        }
+        mongo.db.workouts.update({"_id": ObjectId(workout_id)}, submit)
+        flash("Workout Updated Successful")
+
     workout = mongo.db.workouts.find_one({"_id": ObjectId(workout_id)})
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("edit_workout.html", workout=workout, categories=categories)
+
+
+@app.route("/delete_workout/<workout_id>")
+def delete_workout(workout_id):
+    mongo.db.workouts.remove({"_id": ObjectId(workout_id)})
+    return redirect(url_for("dashboard"))
 
 
 #requesting an opponant form

@@ -1,5 +1,4 @@
 {% extends "base.html" %} {% block content %}
-
 <!-- Page Title with navigation links-->
 <div class="row">
     <div class="col s3">
@@ -19,7 +18,7 @@
     <!-- workout cards -->
     <br>
     <div class="col s8">
-        {% for workout in workouts %}
+        {% for workout in workouts %} {% if session.user|lower == workout.created_by|lower %}
         <div class="card">
             <h5 class="col s6 blue-text">{{ workout.workout_type }}</h5>
             <div class="card-image">
@@ -37,10 +36,10 @@
                     <li class=" col s12 grey-text"> Description:{{ workout.workout_description }}</li>
                 </ul>
             </div>
-            <div class="card-action ">
+            <div class="card-action">
                 <p class="center-align left "><em>by: {{workout.created_by}}</em></p>
                 <a href="{{ url_for('edit_workout', workout_id=workout._id) }}"><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
-                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
+                <a href="{{ url_for('delete_workout', workout_id=workout._id) }}"><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>{% endif %}
                 <input>
             </div>
             {% endfor %}
