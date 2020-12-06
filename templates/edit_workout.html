@@ -7,7 +7,7 @@
     <form class="col s12" method="POST" action="{{ url_for('edit_workout', workout_id=workout._id) }}">
         <div class="row">
             <div class="input-field col s12">
-                <input id="workout_type" name="workout_type" type="text" class="validate">
+                <input id="workout_type" name="workout_type" value="{{ workout.workout_type }}" type="text" class="validate">
                 <label for="workout_type">Workout Title</label>
             </div>
         </div>
@@ -17,10 +17,14 @@
         <div class="row">
             <div class="input-field col s12">
                 <select id="workout_type" name="workout_type" class="validate" required>
-      <option value="" disabled selected>Choose your option</option>
+      <option disabled>Choose your option</option>
       {% for category in categories %}
-      <option value="{{ category.workout_type }}">{{ category.workout_type }}</option>
-      {% endfor %} 
+      {% if category.workout_type == workout.workout_type %}
+            <option value="{{ category.workout_type }}" selected>{{ category.workout_type }}</option>
+      {% else %}
+            <option value="{{ category.workout_type }}">{{ category.workout_type }}</option>
+      {% endif %}
+    {% endfor %} 
     </select>
                 <label for="workout_type">Sport Category</label>
             </div>
@@ -30,7 +34,7 @@
         <!--select distance and metric-->
         <div class="row">
             <div class="input-field col s6">
-                <input type="number" class="form-control" id="workout_distance" name="workout_distance" placeholder="00" step="1" value="00" required="true" />
+                <input type="number" class="form-control" id="workout_distance" name="workout_distance" value="{{ workout.workout_distance }}" step="1" value="00" required="true" />
                 <div class="input-group-append">
                 </div>
 
@@ -39,10 +43,10 @@
             </div>
             <div class="input-field col s6">
                 <select id="workout_metric" name="workout_metric" class="validate">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">miles</option>
-                <option value="2">km</option>
-                <option value="2">lengths</option>
+                <option value="{{ workout.workout_metric }}" disabled>Choose your option</option>
+                <option value="miles">miles</option>
+                <option value="km">km</option>
+                <option value="lengths">lengths</option>
                
                 </select>
                 <label for="workout_metric">Metric</label>
@@ -54,13 +58,13 @@
         <div class="row">
             <div class="col s3 p-0">
                 <label class="col-12 add-workout-label" for="workout-duration">Duration</label>
-                <input type="number" class="form-control" id="workout_duration_h" name="workout_duration_h" placeholder="00" step="1" value="00" required="true" />
+                <input type="number" class="form-control" id="workout_duration_h" name="workout_duration_h" value="{{ workout.workout_duration_h }}" step="1" value="00" required="true" />
                 <div class="input-group-append">
                     <span class="input-group-text">hours</span>
                 </div>
             </div>
             <div class="input-field col s3">
-                <input type="number" class="form-control" id="workout_duration_m" name="workout_duration_m" min="00" max="59" placeholder="00" step="1" value="00" required="true" />
+                <input type="number" class="form-control" id="workout_duration_m" name="workout_duration_m" value="{{ workout.workout_duration_m }}" min="00" max="59" step="1" value="00" required="true" />
                 <div class="input-group-append">
                     <span class="input-group-text">minutes</span>
                 </div>
@@ -70,7 +74,7 @@
         <!--date picker-->
         <div class="row">
             <div class="input-field col s6">
-                <input id="workout_date" name="workout_date" type="text" class="datepicker validate" required>
+                <input id="workout_date" name="workout_date" type="text" value="{{ workout.workout_date }}" class="datepicker validate" required>
                 <label for="workout_date">Workout Date</label>
             </div>
         </div>
@@ -78,13 +82,15 @@
         <!--description area-->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="workout_description" name="workout_description" class="materialize-textarea validate" minlength="0" maxlength="200"></textarea>
+                <textarea id="workout_description" name="workout_description" class="materialize-textarea validate" minlength="0" maxlength="200">
+                    {{- workout.workout_description -}}</textarea>
                 <label for="workout_description">workout description</label>
             </div>
         </div>
         <!--submit button-->
+        <a href="{{ url_for('dashboard') }}" class="left btn red text-shadow">Cancel</a>
         <div class="row">
-            <button class="right btn blue" type="submit" name="action">Edit Workout
+            <button class="right btn blue text-shadow" type="submit" name="action">Edit Workout
                     <i class="material-icons right">create</i>
                   </button>
     </form>
