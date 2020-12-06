@@ -125,6 +125,11 @@ def request_opponant():
     return render_template("request_opponant.html")
 
 
+@app.route("/challenge", methods=["GET", "POST"])
+def challenge():
+    return render_template("challenge.html")
+
+
 if __name__ == '__main__':
            app.run(host=os.environ.get('IP', '0.0.0.0'),              
            port=int(os.environ.get('PORT', 5000)),
