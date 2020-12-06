@@ -3,8 +3,9 @@
 <!-- User profile information-->
 <div class="row">
     <div class="col s12 m4">
+
         <h4 class="profile-title col-12 pb-3 no-gutters text-center">
-            users name</h4>
+        </h4>
         <input>
         <h7 class=" col s12 m4 left grey-text lighten-1">activities</h7>
         <p class="left grey-text lighten-1">12</p>
@@ -18,32 +19,30 @@
 
 <div class="row">
     <div class="col s12 m7 offset-m4">
+        {% for workout in workouts %}
         <div class="card">
             <div class="card-image">
-                {% for workout in workouts %}
                 <img src="static/images/default_noimage.jpg ">
-                <span class="card-title" style="font-weight: 600;">{{ workout.workout_type }}</span>
+                <span class="card-title">{{ workout.workout_type }}</span>
             </div>
-            <div class="card-content ">
-                <h6 class="grey-text ">{{ workout.workout_date }}</h6>
-                <h8> Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</h8>
-                <h8 class="right">Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</h8>
-                <br>
-                <p class="grey-text ">{{ workout.workout_description }}</p>
-                <br>
-                <div class=" card-action">
-                    <p class="center-align left"><em>by: {{workout.created_by}}</em></p>
-                    <a href="# "><i class="material-icons center-align right " style="color:rgba(0, 153, 255, 0.671) ">add_circle</i></a>
-                    <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
-                    <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
-
-                    <input>
-                </div>
-                {% endfor %}
+            <div class="card-content">
+                <p>{{ workout.workout_date }}
+                    <br> Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins
+                    <br> Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}
+                    <br> {{ workout.workout_description }}
+                </p>
             </div>
+            <div class="card-action">
+                <p class="center-align left"><em>by: {{workout.created_by}}</em></p>
+                <a href="# "><i class="material-icons center-align right " style="color:rgba(0, 153, 255, 0.671) ">add_circle</i></a>
+                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
+                <a href="# "><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
+                <input>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
-</div>
+
 
 {% endblock %}
