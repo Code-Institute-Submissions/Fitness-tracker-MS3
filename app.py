@@ -120,6 +120,10 @@ def add_workout():
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("add_workout.html", categories=categories)
 
+@app.route("/request_opponant", methods=["GET", "POST"])
+def request_opponant():
+    return render_template("request_opponant.html")
+
 
 if __name__ == '__main__':
            app.run(host=os.environ.get('IP', '0.0.0.0'),              
