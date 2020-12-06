@@ -19,10 +19,32 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/dashboard")
-def dashboard():
-    workouts = mongo.db.workouts.find()
-    return render_template("dashboard.html", workouts=workouts)
+@app.route('/dashboard/<user_id>')
+def dashboard(user_id):
+    # renders users dashboard to show workouts
+    user = mongo.db.current_users.find_one({'_id': ObjectId(user_id)})
+    count_workouts = mongo.db.workouts.find(
+        {'user_id': user_id}).count()
+
+    if user is None:
+        return redirect(url_for("login"))
+
+    if session.get('user_id'):
+        if session['user_id'] == str(user['_id']):
+            workout_dict = mongo.db.workouts.find(
+                {'user_id': user_id}).sort([('workout_date', -1)])
+            recent_workout = mongo.db.workouts.find(
+                {'user_id': user_id}).sort([('workout_date', -1)]).limit(1)
+            if workout_dict.count() == 0:
+                workouts = None
+            else:
+                workouts = workout_dict
+            return render_template("dashboard.html", user=mongo.db.current_users.find_one(
+                {'_id': ObjectId(user_id)}), workouts=workouts,
+                recent=recent_workout, count=count_workouts)
+        else:
+            return redirect(url_for("login"))
+    return redirect(url_for("login"))
 
 
 #registering users
@@ -46,6 +68,7 @@ def register():
             "email" : request.form.get("signup_email").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
+        
              }
         mongo.db.users.insert_one(register)
 
@@ -112,6 +135,7 @@ def add_workout():
             "workout_duration_m": request.form.get("workout_duration_m"),
             "workout_date": request.form.get("workout_date"),
              "workout_description": request.form.get("workout_description"),
+             'user_id': request.form.get('user_id'),
              "created_by": session["user"]  
         }
         mongo.db.workouts.insert_one(workout)
