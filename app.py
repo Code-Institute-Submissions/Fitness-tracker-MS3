@@ -120,11 +120,22 @@ def add_workout():
     categories = mongo.db.categories.find().sort("workout_type", 1)
     return render_template("add_workout.html", categories=categories)
 
+
+#editing a workout
+@app.route("/edit_workout/<workout_id>", methods=["GET", "POST"])
+def edit_workout(workout_id):
+    workout = mongo.db.workouts.find_one({"_id": ObjectId(workout_id)})
+    categories = mongo.db.categories.find().sort("workout_type", 1)
+    return render_template("edit_workout.html", workout=workout, categories=categories)
+
+
+#requesting an opponant form
 @app.route("/request_opponant", methods=["GET", "POST"])
 def request_opponant():
     return render_template("request_opponant.html")
 
 
+#challenging a friend form
 @app.route("/challenge", methods=["GET", "POST"])
 def challenge():
     return render_template("challenge.html")
