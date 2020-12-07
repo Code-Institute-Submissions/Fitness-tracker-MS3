@@ -1,6 +1,63 @@
 {% extends "base.html" %} {% block content %}
 <h3 class="blue-text text-darken-5 center-align">Challenge a Friend</h3>
+
+<!--name-->
 <div class="row">
+    <form class="col s12">
+        <div class="input-field col s6">
+            <input id="firstname" type="text" class="validate">
+            <label for="firstname ">Challenge's Name</label>
+        </div>
+        <div class="input-field col s6 ">
+            <input id="lastname" type="text" class="validate">
+            <label for="lastname">Challenge's Last Name</label>
+        </div>
+</div>
+
+<!--email-->
+<div class="row ">
+    <div class="input-field col s12 ">
+        <input id="email" type="email" class="validate">
+        <label for="email ">Challenge's Email</label>
+    </div>
+</div>
 
 
-    {% endblock %}
+<!--select workout type-->
+<div class="row ">
+    <div class="input-field col s12 ">
+        <select id="workout_type " name="workout_type " class="validate " required>
+    <option value=" " disabled selected>Choose your option</option>
+    {% for category in categories %}
+    <option value="{{ category.workout_type }} ">{{ category.workout_type }}</option>
+    {% endfor %} 
+    </select>
+        <label for="workout_type ">Sport Category</label>
+    </div>
+</div>
+
+<!--date picker-->
+<div class="row">
+    <div class="input-field col s6">
+        <input type="text" class="datepicker validate" required>
+        <label>Workout Date</label>
+    </div>
+</div>
+
+<!--description area-->
+<div class="row">
+    <div class="input-field col s12">
+        <textarea id="additional_comments" name="additional_comments" class="materialize-textarea validate" minlength="0" maxlength="200"></textarea>
+        <label for="additional_comments">Additional Comments</label>
+    </div>
+</div>
+
+<!--submit button-->
+<div class="row ">
+    <button class="btn blue " type="submit " name="action ">Request Opponant
+              
+              </button>
+    </form>
+</div>
+
+{% endblock %}
