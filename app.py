@@ -43,7 +43,7 @@ class User:
 
 @app.route("/dashboard")
 def dashboard():
-    workouts = mongo.db.workouts.find()
+    workouts = mongo.db.workouts.find({"created_by": session["user"]})
     return render_template("dashboard.html", workouts=workouts)
 
 
