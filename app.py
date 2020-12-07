@@ -70,7 +70,13 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
              }
         mongo.db.users.insert_one(register)
-        return self.start_session(user)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        return redirect(url_for("dashboard", username=session["user"]))
+
+    return render_template("register.html")
+    return self.start_session(user)
 
 
 @app.route("/login", methods=["GET", "POST"])
