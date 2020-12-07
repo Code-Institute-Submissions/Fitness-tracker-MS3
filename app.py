@@ -18,6 +18,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+@app.route("/")
+def home():
+    return render_template("login.html")
+
 #Decorators
 def login_required(f):
     @wraps(f)
@@ -35,11 +39,6 @@ class User:
         session['logged_in'] = True
         session['user'] = user
         return jsonify(user), 200
-
-
-@app.route("/")
-def home_landing():
-    return render_template("home_landing.html")
 
 
 @app.route("/dashboard")
