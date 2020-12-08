@@ -1,12 +1,24 @@
-body {
-    background-color: whitesmoke;
-}
-
-flashes h4 {
-    line-height: 2;
-}
-
-card {
-    margin: 5px !important;
-    ;
-}
+        /* ----- GENERAL STYLING ----- */
+        
+        * {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+        
+        body {
+            background-color: whitesmoke;
+        }
+        
+        flashes h4 {
+            line-height: 2;
+        }
+        /* NAVBAR */
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+        }
+        /* dashboard */
