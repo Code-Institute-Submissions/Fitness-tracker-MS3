@@ -1,53 +1,53 @@
 {% extends "base.html" %} {% block content %}
 <!-- Page Title with navigation links-->
 <div class="row">
-    <div class="col s3">
+    <div class="col s12 m4 l3">
         <h4>Your Workout Log</h4>
         {{ session['user'] }}
         <h6>Recent Activities</h6>
         <input>
-        <h6 class="blue-text"><i class="material-icons center-align left " style="color: rgba(241, 152, 36, 0.87); ">directions_bike</i>
+
+        <h6 class="blue-text hide-on-small-only"><i class="material-icons center-align left " style="color: rgba(241, 152, 36, 0.87); ">directions_bike</i>
             <a href="{{ url_for('challenge') }}">Challenge a Friend</a></h6>
-        <p class="grey-text">Challenge a friend to stay on top of your game</p>
-        <input>
-        <h6 class="blue-text"><i class="material-icons center-align left " style="color: rgba(241, 152, 36, 0.87); ">person_add</i>
+        <p class="grey-text hide-on-small-only">Challenge a friend to stay on top of your game</p>
+        <input class="hide-on-small-only">
+        <h6 class="blue-text hide-on-small-only"><i class="material-icons center-align left " style="color: rgba(241, 152, 36, 0.87); ">person_add</i>
             <a href="{{ url_for('request_opponant') }}">Request an Opponent</a></h6>
-        <p class="grey-text">Fancy a game of tennis but noone to play with? Request an opponent in your area</p>
+        <p class="grey-text hide-on-small-only">Fancy a game of tennis but noone to play with? Request an opponent in your area</p>
     </div>
 
 
     <!-- workout cards -->
     <br>
-    <div class="col s8">
-        {% for workout in workouts %}
-        <div class="card">
-            <h5 class="col s6 blue-text">{{ workout.workout_type }}</h5>
-            <div class="card-image">
-                <img src="static/images/default_noimage.jpg ">
-                <span class="card-title"><strong>{{ workout.workout_type }}</strong></span>
-            </div>
-            <div class="card-content">
-                <ul class="row">
-                    <li class="col s12"></li>
-                    <li class="col s3 right">{{ workout.workout_date }}</li>
-                    <li class="col s4"> Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</li>
+    <div class="section">
+        <div class="col s12 m4 l8" id="workoutcard">
+            {% for workout in workouts %}
+            <div class="card">
+                <h5 class="col s8 blue-text">{{ workout.workout_type }}</h5>
+                <div class="card-image">
+                    <img src="static/images/default_noimage.jpg ">
+                </div>
+                <div class="card-content">
+                    <ul class="row">
+                        <li class="col s12"></li>
+                        <li class="col s3 right">{{ workout.workout_date }}</li>
+                        <li class="col s4"> Duration: {{ workout.workout_duration_h }} hrs {{ workout.workout_duration_m }} mins</li>
 
-                    <li class="col s3"> Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</li>
+                        <li class="col s3"> Distance: {{ workout.workout_distance }} {{ workout.workout_metric }}</li>
+                        <br>
+                        <li class=" col s12 grey-text"> Description:{{ workout.workout_description }}</li>
+                    </ul>
+                    <p class="createdby"><em>by: {{workout.created_by}}</em></p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('edit_workout', workout_id=workout._id) }}"><i class="material-icons right " style="color: rgb(255, 147, 7); ">create</i></a>
+                    <a href="{{ url_for('delete_workout', workout_id=workout._id) }}"><i class="material-icons right " style="color: rgb(255, 115, 115); ">delete</i></a>
                     <br>
-                    <li class=" col s12 grey-text"> Description:{{ workout.workout_description }}</li>
-                </ul>
-            </div>
-            <div class="card-action">
-                <p class="center-align left "><em>by: {{workout.created_by}}</em></p>
-                <a href="{{ url_for('edit_workout', workout_id=workout._id) }}"><i class="material-icons center-align right " style="color: darkgray; ">create</i></a>
-                <a href="{{ url_for('delete_workout', workout_id=workout._id) }}"><i class="material-icons center-align right " style="color: darkgray; ">delete</i></a>
-                <input>
+                </div>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
