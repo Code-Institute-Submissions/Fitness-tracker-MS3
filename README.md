@@ -7,18 +7,19 @@ Fitness Tracker requires a login, however there is a test account user if you do
 Username: TesterAccount
 Password:test123
 
-##UX & UI
+## UX & UI
 
 The aim with the FitnessTracker is for users, to add, manage, and view all of their workouts.
 
 When editing a workout the input value is set to what was initially saved for ease of editing. 
 
 The design is based around being clean and concise for usability, as the main focus of the site 
-###my Wireframes can be viewed here
-https://xd.adobe.com/view/4744aed7-1936-4de1-827a-5927a5d2836f-1217/
+
+### Wireframe
+ my Wireframes can be viewed [here](https://xd.adobe.com/view/4744aed7-1936-4de1-827a-5927a5d2836f-1217/)
 
 
-##Technologies Used
+## Technologies Used
 
 Python - used as the backend language to connect what the user sees and the data they have input
 Flask - framework used to simplify python for faster builds
@@ -31,17 +32,17 @@ jQuery - used in conjunction with Javascript to create an interactive user exper
 Materialise - used for quick, responsive styling
 Pixabay - used for free stock photos
 
-##User stories
+## User stories
 
-##Strategy
+## Strategy
 
 As the target audience is broad for the fitness industry, from ultra marathon runners, to you average daily walker, I have kept the interface clean and ease of navigation. Users can quickly login in, see there dashboard with all there recent workouts logged and add new ones. As you can track your fitness, it helps users see when they was last active.
 
-##Structure
+## Structure
 
 Responsiveness and clarity were my goal for this site. It is not feature heavy because I don't want to over complicate something that should be simple.
 
-##Features
+## Features
 
 This project is built with Python, Flask, Jinja, CSS, Materialize, and JQuery and uses MongoDB to store user input. I chose to use Materialize to keep a nice, clean grid feel to the site.
 
@@ -57,7 +58,7 @@ Imagery - I did have the functionality of images you upload to your workout then
 
 Requesting a partner - as this is a workout tracker, I thought potentially would be great to also have the functionality to request a partner, say for a game of tennis, or a sport you cant, or don’t wish to do alone. Such as asking for a running partner for certain days of the week. To help keep you both motivated.
 
-##Future Features
+## Future Features
 
 With fitness industry scaling massively at the moment, the lists of future features could be endless, from infographic charts, to social interactions.
 
@@ -69,7 +70,7 @@ With fitness industry scaling massively at the moment, the lists of future featu
 -Tracking calorie expenditure to see if your eating enough for your training methods
 -Add in the ability to type password in again to delete a workout rather than just deleting 
 
-##Testing
+## Testing
 
 Found bugs/ errors
 
@@ -81,29 +82,29 @@ CERTIFICATE_VERIFY_FAILED which i initally thought was linked to the IP whitelis
 https://pythonise.com/categories/python/connecting-to-a-microsoft-azure-cosmos-db-with-python-and-the-mongodb-ap
 
 
-##Device/Browser Testing
+## Device/Browser Testing
 
 Used Chrome Dev tools to test the responsiveness of this project on multiple devices
 Check browser compatibility in Firefox, Chrome, and Safari
 
-##Outstanding Issues
+## Outstanding Issues
 Opponant Request - needs linking up properly, and then posting to a feed html, this was an idea which would need further work
 
 Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made
 
-##Database Structure
+## Database Structure
 
 Add screenshots
 
-##Deployment
+## Deployment
 
 The site is hosted using Heroku, any additional or new commits will automatically be updated as this links to my master branch.
 Deploy to Heroku
 
-Detailed instructions for deploying to Heroku can be found here
+Detailed instructions for deploying to Heroku can be found [here](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true)
 
 
-##Local Deployment
+## Local Deployment
 
 To create a local copy of this repository, follow these steps:
 
@@ -116,6 +117,5 @@ Type git clone <cloned URL> with the cloned URL being the URL you copied in step
 For more information check out GitHub's guide to cloning a repo here.
 
 
-##Acknowledgement
-
-Links I have saved
+## Acknowledgement
+Free imagery resource [pixabay](https://pixabay.com/images/search/workout/)
