@@ -3,10 +3,9 @@
 Fitness tracker can be accesses here:
 https://fitness-ms3-samanthasimmons.herokuapp.com/
 
-Fitness Tracker requires a login, however there is a test account user if you wish to use. Username: TesterAccount
-
+Fitness Tracker requires a login, however there is a test account user if you dont want to create an account
+Username: TesterAccount
 Password:test123
-
 
 ##UX & UI
 
@@ -30,7 +29,6 @@ CSS3 - used for styling of HTML
 Javascript - used in conjunction with jQuery to create an interactive user experience
 jQuery - used in conjunction with Javascript to create an interactive user experience
 Materialise - used for quick, responsive styling
-Google Fonts - Used for website typography
 Pixabay - used for free stock photos
 
 ##User stories
@@ -63,20 +61,21 @@ Requesting a partner - as this is a workout tracker, I thought potentially would
 
 With fitness industry scaling massively at the moment, the lists of future features could be endless, from infographic charts, to social interactions.
 
-Social interactions, this fitness tracker could be adapted into a social platform where you can add friends, and follow each other for additional motivational purposes
-Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image
-I would like to integrate the website with additional sports watches and phone trackers to automatically upload once you have completed your workout
-It would be great if we could have a data chart of tracking when a user is workout out too much or not enough, so it helps to set daily targets to hit
-Gps tracking - would be able to track the users distance again this would probably work better by using a fitness tracking device, but also so you could implement maps into each users workout so they can see and potentially map out new routes if needed.
-Tracking calorie expenditure to see if your eating enough for your training methods
+-Social interactions, this fitness tracker could be adapted into a social platform where you can add friends, and follow each other for additional motivational purposes
+-Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image
+-I would like to integrate the website with additional sports watches and phone trackers to automatically upload once you have completed your workout
+-It would be great if we could have a data chart of tracking when a user is workout out too much or not enough, so it helps to set daily targets to hit
+-Gps tracking - would be able to track the users distance again this would probably work better by using a fitness tracking device, but also so you could implement maps into each users workout so they can see and potentially map out new routes if needed.
+-Tracking calorie expenditure to see if your eating enough for your training methods
+-Add in the ability to type password in again to delete a workout rather than just deleting 
 
 ##Testing
 
 Found bugs/ errors
 
 Matching workouts created by to a users dashboard, as initially when you logged in you could see all workouts created by all users, rather than just your own 
-Heroku created a number of bugs for me to resolve, typically due to my inexperience with using Heroku, along with using VSC as my desired platform to build in.Mentor review
-Overall positive feedback from my mentor, Jonathon he suggested looking into different ways imagery could be added such as a src outside of the website  which you could like to, however as it wasn’t a requirement for this project I decided not to make it a focal point
+Heroku created a number of bugs for me to resolve, typically due to my inexperience with using Heroku, along with using VSC as my desired platform to build in. 
+Mentor review - Overall positive feedback from my mentor, Jonathon he suggested looking into different ways imagery could be added such as a src outside of the website  which you could like to, however as it wasn’t a requirement for this project I decided not to make it a focal point
 
 CERTIFICATE_VERIFY_FAILED which i initally thought was linked to the IP whitelist, however the connection string for MONGO_URI required some additional arguments in to successfully establish a connection with the database.
 https://pythonise.com/categories/python/connecting-to-a-microsoft-azure-cosmos-db-with-python-and-the-mongodb-ap
@@ -88,10 +87,9 @@ Used Chrome Dev tools to test the responsiveness of this project on multiple dev
 Check browser compatibility in Firefox, Chrome, and Safari
 
 ##Outstanding Issues
-
 Opponant Request - needs linking up properly, and then posting to a feed html, this was an idea which would need further work
 
-Challenge a friend - 
+Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made
 
 ##Database Structure
 
