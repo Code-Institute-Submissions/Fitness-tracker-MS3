@@ -19,13 +19,13 @@
 
     <!-- workout cards -->
     <br>
-    <div class="section">
+    <div class="section" onload="chose()">
         <div class="col s12 m4 l8" id="workoutcard">
             {% for workout in workouts %}
             <div class="card">
                 <h5 class="col s8 blue-text">{{ workout.workout_type }}</h5>
                 <div class="card-image">
-                    <img src="static/images/default_noimage.jpg ">
+                    <img src="" id="workoutImage">
                 </div>
                 <div class="card-content">
                     <ul class="row">
