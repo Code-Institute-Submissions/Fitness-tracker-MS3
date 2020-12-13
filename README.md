@@ -34,6 +34,10 @@ Pixabay - used for free stock photos
 
 ## User stories
 
+1) "Fitmess Tracker has alot of potentially for a future application, very easy to use and navigate though, its great to be able to see my workouts in one place"
+
+2) "I typically do different forms of working out and having a place to track all my workouts in one place is amazing, completed by allowing users to select from a wide range of different sports/workouts when adding it their dashboard, or even adding there own!"
+
 ## Strategy
 
 As the target audience is broad for the fitness industry, from ultra marathon runners, to you average daily walker, I have kept the interface clean and ease of navigation. Users can quickly login in, see there dashboard with all there recent workouts logged and add new ones. As you can track your fitness, it helps users see when they was last active.
@@ -46,36 +50,38 @@ Responsiveness and clarity were my goal for this site. It is not feature heavy b
 
 This project is built with Python, Flask, Jinja, CSS, Materialize, and JQuery and uses MongoDB to store user input. I chose to use Materialize to keep a nice, clean grid feel to the site.
 
-Flask is used to quickly build reusable templates that pulls information from MongoDB and allows the user to create, read, update, or delete information that is stored.
+- Flask is used to quickly build reusable templates that pulls information from MongoDB and allows the user to create, read, update, or delete information that is stored.
 
-CRUD Functionality - users can create, read, update and delete all workouts on there dashboard area
+- CRUD Functionality - users can create, read, update and delete all workouts on there dashboard area
 
-Dashboard blocks -  users can easily see and scroll through workouts they have added which are displayed in a card block formats 
+- Dashboard blocks -  users can easily see and scroll through workouts they have added which are displayed in a card block formats 
 
-Login - Users must create a unique login to access the fitness tracker, which will display that users workouts. 
+- Login - Users must create a unique login to access the fitness tracker, which will display that users workouts. 
 
-Imagery - I did have the functionality of images you upload to your workout then appearing within your “workout block area” however after recently discovering its poor practice to upload imagery into mongoldb as this could impact the database loadtimes, I decided to move this into a future feature.
+- Imagery - I did have the functionality of images you upload to your workout then appearing within your “workout block area” however after recently discovering its poor practice to upload imagery into mongoldb as this could impact the database loadtimes, I decided to move this into a future feature.
 
-Requesting a partner - as this is a workout tracker, I thought potentially would be great to also have the functionality to request a partner, say for a game of tennis, or a sport you cant, or don’t wish to do alone. Such as asking for a running partner for certain days of the week. To help keep you both motivated.
+- Requesting a partner - as this is a workout tracker, I thought potentially would be great to also have the functionality to request a partner, say for a game of tennis, or a sport you cant, or don’t wish to do alone. Such as asking for a running partner for certain days of the week. To help keep you both motivated.
 
 ## Future Features
 
 With fitness industry scaling massively at the moment, the lists of future features could be endless, from infographic charts, to social interactions.
 
--Social interactions, this fitness tracker could be adapted into a social platform where you can add friends, and follow each other for additional motivational purposes
--Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image
--I would like to integrate the website with additional sports watches and phone trackers to automatically upload once you have completed your workout
--It would be great if we could have a data chart of tracking when a user is workout out too much or not enough, so it helps to set daily targets to hit
--Gps tracking - would be able to track the users distance again this would probably work better by using a fitness tracking device, but also so you could implement maps into each users workout so they can see and potentially map out new routes if needed.
--Tracking calorie expenditure to see if your eating enough for your training methods
--Add in the ability to type password in again to delete a workout rather than just deleting 
+- Social interactions, this fitness tracker could be adapted into a social platform where you can add friends, and follow each other for additional motivational purposes
+- Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image
+- I would like to integrate the website with additional sports watches and phone trackers to automatically upload once you have completed your workout
+- It would be great if we could have a data chart of tracking when a user is workout out too much or not enough, so it helps to set daily targets to hit
+- Gps tracking - would be able to track the users distance again this would probably work better by using a fitness tracking device, but also so you could implement maps into each users workout so they can see and potentially map out new routes if needed.
+- Tracking calorie expenditure to see if your eating enough for your training methods
+- Add in the ability to type password in again to delete a workout rather than just deleting 
 
 ## Testing
 
 Found bugs/ errors
 
 Matching workouts created by to a users dashboard, as initially when you logged in you could see all workouts created by all users, rather than just your own 
+
 Heroku created a number of bugs for me to resolve, typically due to my inexperience with using Heroku, along with using VSC as my desired platform to build in. 
+
 Mentor review - Overall positive feedback from my mentor, Jonathon he suggested looking into different ways imagery could be added such as a src outside of the website  which you could like to, however as it wasn’t a requirement for this project I decided not to make it a focal point
 
 CERTIFICATE_VERIFY_FAILED which i initally thought was linked to the IP whitelist, however the connection string for MONGO_URI required some additional arguments in to successfully establish a connection with the database.
