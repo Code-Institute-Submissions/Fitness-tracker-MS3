@@ -67,7 +67,7 @@ This project is built with Python, Flask, Jinja, CSS, Materialize, and JQuery an
 With fitness industry scaling massively at the moment, the lists of future features could be endless, from infographic charts, to social interactions.
 
 - Social interactions, this fitness tracker could be adapted into a social platform where you can add friends, and follow each other for additional motivational purposes
-- Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image
+- Having a random selector on the imagery that uploads with your workout would be a great feature too rather than having one selected static image - i have tried to implement this, however i have struggled getting this to work, and due to the time of year, have found lack of support to get this issue resolved, and further understanding of the resolution.
 - I would like to integrate the website with additional sports watches and phone trackers to automatically upload once you have completed your workout
 - It would be great if we could have a data chart of tracking when a user is workout out too much or not enough, so it helps to set daily targets to hit
 - Gps tracking - would be able to track the users distance again this would probably work better by using a fitness tracking device, but also so you could implement maps into each users workout so they can see and potentially map out new routes if needed.
