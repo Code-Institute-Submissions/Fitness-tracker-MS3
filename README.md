@@ -98,9 +98,12 @@ Opponant Request - needs linking up properly, and then posting to a feed html, t
 
 Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made
 
+One main issue outstanding is to get an image to randomly upload when adding a workout using the chose function in java, but i think as i spend so much time around the image functionality with this project, I wanted to submit as i have gone over my allocated project timeframe.
+
 ## Database Structure
 
-Add screenshots
+![Screenshotone](screenshot1.png)
+![Screenshottwo](screenshot2.png)
 
 ## Deployment
 
