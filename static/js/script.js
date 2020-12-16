@@ -16,6 +16,7 @@ $(document).ready(function() {
     $('select').formSelect();
     $('#textarea1').val('New Text');
     M.textareaAutoResize($('#textarea1'));
+    chose();
 });
 
 
@@ -26,5 +27,5 @@ var images = ["workout1.jpg", "workout2.jpg", "workout3.jpg", "workout4.jpg", "w
 
 function chose() {
     var rand = Math.floor(Math.random() * images.length);
-    document.getElementByClassName("card-image").src = "static/images/" + images[rand];
+    document.getElementsByClassName("WorkoutImage").src = "static/images/" + images[rand];
 }

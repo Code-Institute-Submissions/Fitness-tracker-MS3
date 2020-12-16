@@ -101,7 +101,7 @@ Opponant Request - needs linking up properly, and then posting to a feed html, t
 
 Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made.
 
-One main issue outstanding is to get an image to randomly upload when adding a workout using the chose function in java, but i think as i spend so much time around the image functionality with this project, I wanted to submit as i have gone over my allocated project timeframe.
+One main issue outstanding is to get an image to randomly upload when adding a workout using the chose function in my script.js file, however its getting the src but not actually setting a new one, but as i spend so much time around the image functionality with this project, I wanted to submit as i have gone over my allocated project timeframe.
 
 From testers feedback i also have the suggestion of adding a pop up element with a notification, to ensure you want to delete your workout. 
 
