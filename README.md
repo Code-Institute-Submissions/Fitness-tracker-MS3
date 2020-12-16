@@ -103,6 +103,8 @@ Challenge a friend - also needs some additional work, where you can email friend
 
 One main issue outstanding is to get an image to randomly upload when adding a workout using the chose function in java, but i think as i spend so much time around the image functionality with this project, I wanted to submit as i have gone over my allocated project timeframe.
 
+From testers feedback i also have the suggestion of adding a pop up element with a notification, to ensure you want to delete your workout. 
+
 ## Database Structure
 
 Database structure these can be accessed in my github project.
