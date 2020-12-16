@@ -1,4 +1,5 @@
 # Fitness-tracker-MS3
+Interactive fitness tracker for educational purposes only. Materialise styling template has been used for this project.
 
 Fitness tracker can be accesses here:
 https://fitness-ms3-samanthasimmons.herokuapp.com/
@@ -8,12 +9,9 @@ Username: TesterAccount
 Password:test123
 
 ## UX & UI
+both desktop and mobile friendly, on accessing the login screen, you can either enter the below credentials or create your own user. The aim with the FitnessTracker is for users, to add, manage, and view all of their workouts, when editing a workout the input value is set to what was initially saved for ease of editing. 
 
-The aim with the FitnessTracker is for users, to add, manage, and view all of their workouts.
-
-When editing a workout the input value is set to what was initially saved for ease of editing. 
-
-The design is based around being clean and concise for usability, as the main focus of the site 
+The design is based around being clean and concise for usability, as the main focus of the site, utilising the styling template materialise.
 
 ### Wireframe
  my Wireframes can be viewed [here](https://xd.adobe.com/view/4744aed7-1936-4de1-827a-5927a5d2836f-1217/)
@@ -76,17 +74,22 @@ With fitness industry scaling massively at the moment, the lists of future featu
 
 ## Testing
 
+All tests have been run manually through the console in google chrome. I have also utilising the debugger; on the lines the errors are appearing in the try and break down these errors further. Along with running the code through a syntax validator to pick up errors. I found the debugger; test and debug tool to be the most efficient with breaking down problems, utilising the console/sources.
+
+I have also had family members testing out the fitness tracker, and playing with the intereactions of creating and deleting features, to get feedback on the usibility and functions.
+
 Found bugs/ errors
 
-Matching workouts created by to a users dashboard, as initially when you logged in you could see all workouts created by all users, rather than just your own 
+issue 1 - Matching workouts created by to a users dashboard, as initially when you logged in you could see all workouts created by all users, rather than just your own 
 
-Heroku created a number of bugs for me to resolve, typically due to my inexperience with using Heroku, along with using VSC as my desired platform to build in. 
+issue 2 - Heroku created a number of bugs for me to resolve, typically due to my inexperience with using Heroku, along with using VSC as my desired platform to build in. 
 
-Mentor review - Overall positive feedback from my mentor, Jonathon he suggested looking into different ways imagery could be added such as a src outside of the website  which you could like to, however as it wasn’t a requirement for this project I decided not to make it a focal point
-
-CERTIFICATE_VERIFY_FAILED which i initally thought was linked to the IP whitelist, however the connection string for MONGO_URI required some additional arguments in to successfully establish a connection with the database.
+issue 3 - CERTIFICATE_VERIFY_FAILED which i initally thought was linked to the IP whitelist, however the connection string for MONGO_URI required some additional arguments in to successfully establish a connection with the database.
 https://pythonise.com/categories/python/connecting-to-a-microsoft-azure-cosmos-db-with-python-and-the-mongodb-ap
 
+Mentor review - Overall positive feedback from my mentor, Jonathon he suggested looking into different ways imagery could be added such as a src outside of the website  which you could like to, however as it wasn’t a requirement for this project I decided not to make it a focal point.
+
+Manual testing for css styling was done through the live preview port, in visual code.
 
 ## Device/Browser Testing
 
@@ -96,14 +99,15 @@ Check browser compatibility in Firefox, Chrome, and Safari
 ## Outstanding Issues
 Opponant Request - needs linking up properly, and then posting to a feed html, this was an idea which would need further work
 
-Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made
+Challenge a friend - also needs some additional work, where you can email friends and invite them into the platform, this is where I do believe having "feed like area" full of the challenges, and opponant requests that have been made.
 
 One main issue outstanding is to get an image to randomly upload when adding a workout using the chose function in java, but i think as i spend so much time around the image functionality with this project, I wanted to submit as i have gone over my allocated project timeframe.
 
 ## Database Structure
 
-![Screenshotone](screenshot1.png)
-![Screenshottwo](screenshot2.png)
+Database structure these can be accessed in my github project.
+screenshot1.png
+screenshot2.png
 
 ## Deployment
 
@@ -128,3 +132,6 @@ For more information check out GitHub's guide to cloning a repo here.
 
 ## Acknowledgement
 Free imagery resource [pixabay](https://pixabay.com/images/search/workout/)
+
+
+Onload Attribute isn't supported on all elements in particular it won't work on a div tag, here's a list of where it's valid to use: https://www.w3schools.com/tags/ev_onload.asp

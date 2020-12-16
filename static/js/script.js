@@ -26,5 +26,5 @@ var images = ["workout1.jpg", "workout2.jpg", "workout3.jpg", "workout4.jpg", "w
 
 function chose() {
     var rand = Math.floor(Math.random() * images.length);
-    document.getElementById("workoutImage").src = images[rand];
+    document.getElementByClassName("card-image").src = "static/images/" + images[rand];
 }
